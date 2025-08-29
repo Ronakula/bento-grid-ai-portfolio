@@ -1,0 +1,133 @@
+/* ===== STATS GRID ===== */
+.home .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  width: 100%;
+}
+
+.chat .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 6px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--text-1);
+  line-height: 1;
+}
+
+.stat-number::after {
+  content: "+";
+  color: var(--primary-base);
+}
+
+.stat-content {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: var(--surface-3);
+  border-radius: 8px;
+  backdrop-filter: blur(8px);
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-base);
+  flex-shrink: 0;
+}
+
+.stat-label {
+  font-size: 0.6rem;
+  color: var(--text-1);
+  white-space: nowrap;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (width < 700px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .stat-card {
+    padding: 14px 10px;
+  }
+  
+  .stat-number {
+    font-size: 1.6rem;
+  }
+  
+  .stat-content {
+    padding: 5px 8px;
+    gap: 5px;
+  }
+  
+  .stat-label {
+    font-size: 0.55rem;
+  }
+}
+
+@media (width < 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  
+  .stat-card {
+    padding: 12px 8px;
+  }
+}
+
+/* ===== KPI STYLES ===== */
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+@media (width < 700px) {
+  .kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.kpi {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: clamp(10px, 1.2vh, 14px) clamp(12px, 1.4vh, 16px);
+  text-align: center;
+  color: var(--text-1);
+  box-shadow: 0 6px 20px var(--shadow-elevated);
+  font-size: clamp(0.8rem, 1.2vh, 0.9rem);
+}
+
+.kpi strong {
+  font-size: clamp(1.4rem, 2.5vh, 1.8rem);
+  letter-spacing: -0.02em;
+}

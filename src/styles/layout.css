@@ -1,0 +1,210 @@
+/* ===== LAYOUT CONTAINER ===== */
+.container {
+  max-width: 1400px;
+  display: grid;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    height: calc(100vh - 16px);
+    overflow: hidden;
+    gap: 4px;
+  }
+}
+
+/* ===== NAVIGATION ===== */
+.nav {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 0;
+}
+
+.nav a {
+  color: var(--text-2);
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: var(--text-1);
+}
+
+.nav div strong {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.nav a[aria-current="page"] {
+  color: var(--text-1);
+  font-weight: 800;
+}
+
+@media (width < 768px) {
+  .nav {
+    display: none;
+  }
+}
+
+/* ===== MOBILE NAV ===== */
+.mobile-nav {
+  display: flex;
+  gap: 6px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  background: var(--surface-1);
+  border-radius: 12px;
+  padding: 6px;
+}
+
+.mobile-nav-link {
+  color: var(--text-2);
+  font-size: .9rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 14px 6px;
+  background: var(--surface-2);
+  border-radius: 12px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile-nav-link.active {
+  background: var(--primary-base);
+  color: var(--black);
+  font-weight: 600;
+}
+
+@media (width > 768px) {
+  .mobile-nav {
+    display: none;
+  }
+}
+
+/* ===== BENTO GRID LAYOUT ===== */
+.home .bento-grid {
+  display: grid;
+  grid-template-areas:
+    'tech tech tech tech stats stats stats stats stats testimonials testimonials testimonials testimonials workflow workflow workflow'
+    'tech tech tech tech profile profile profile profile profile testimonials testimonials testimonials testimonials workflow workflow workflow'
+    'projects projects projects projects profile profile profile profile profile testimonials testimonials testimonials testimonials workflow workflow workflow'
+    'projects projects projects projects profile profile profile profile profile social social social work work work work'
+    'featuredStacks featuredStacks featuredStacks featuredStacks askai askai askai askai askai social social social work work work work'
+    'featuredStacks featuredStacks featuredStacks featuredStacks askai askai askai askai askai social social social work work work work';
+  grid-template-rows: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(16, 1fr);
+  height: calc(100vh - 90px);
+}
+
+.chat .bento-grid {
+  display: grid;
+  grid-template-areas:
+    'stats chat chat tech'
+    'profile chat chat tech'
+    'featuredStacks chat chat whyChooseMe';
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, 1fr);
+  height: calc(100vh - 90px);
+}
+
+@media (min-width: 768px) {
+  .bento-grid {
+    height: 100%;
+    overflow: hidden;
+    gap: 16px;
+  }
+}
+
+@media (width < 768px) {
+  .home .bento-grid {
+    grid-template-areas:
+      'profile'
+      'stats'
+      'tech'
+      'featuredStacks'
+      'projects'
+      'testimonials'
+      'workflow'
+      'social'
+      'work';
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(9, auto);
+    gap: 16px;
+  }
+
+  .home .bento-grid > :nth-child(8) { display: none; }
+  .home .bento-grid > :nth-child(3) { max-height: 600px; }
+
+  .chat .bento-grid {
+    grid-template-areas:
+      'chat';
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(1, auto);
+  }
+
+  .chat .bento-grid > :nth-child(1) { display: none; }
+  .chat .bento-grid > :nth-child(2) { display: none; }
+  .chat .bento-grid > :nth-child(3) { display: none; }
+  .chat .bento-grid > :nth-child(5) { display: none; }
+  .chat .bento-grid > :nth-child(6) { display: none; }
+  .chat .bento-grid > :nth-child(7) { display: none; }
+}
+
+/* ===== BENTO GRID CARDS ===== */
+.bento-grid > * {
+  color: var(--bento-card-foreground);
+  background-color: var(--bento-card-surface);
+  padding: 12px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 0 var(--shadow-inset) inset, 0 10px 30px var(--shadow-popover);
+  display: grid;
+  gap: 16px;
+}
+
+/* Grid area assignments */
+.home .bento-grid > :nth-child(1) { grid-area: featuredStacks; }
+.home .bento-grid > :nth-child(2) { grid-area: stats; }
+.home .bento-grid > :nth-child(3) { grid-area: testimonials; }
+.home .bento-grid > :nth-child(4) { grid-area: workflow; }
+.home .bento-grid > :nth-child(5) { grid-area: projects; }
+.home .bento-grid > :nth-child(6) { grid-area: profile; }
+.home .bento-grid > :nth-child(7) { grid-area: tech; }
+.home .bento-grid > :nth-child(8) { grid-area: askai; }
+.home .bento-grid > :nth-child(9) { grid-area: social; }
+.home .bento-grid > :nth-child(10) { grid-area: work; }
+
+.chat .bento-grid > :nth-child(1) { grid-area: stats; }
+.chat .bento-grid > :nth-child(2) { grid-area: profile; }
+.chat .bento-grid > :nth-child(3) { grid-area: featuredStacks; }
+.chat .bento-grid > :nth-child(4) { 
+  grid-area: chat; 
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+.chat .bento-grid > :nth-child(5) { grid-area: tech; }
+.chat .bento-grid > :nth-child(6) { grid-area: whyChooseMe; }
+
+/* Special card styling */
+/* .bento-grid > :nth-child(6) {
+  --bento-card-surface: var(--surface-2);
+  --bento-card-padding: clamp(24px, 3vh, 48px);
+  --bento-card-horizontal-alignment: center;
+  --bento-card-vertical-alignment: center;
+} */
+
+.home .bento-grid > :nth-child(10) {
+  --bento-card-surface: var(--surface-2);
+  --bento-card-horizontal-alignment: center;
+  --bento-card-vertical-alignment: center;
+}

@@ -1,0 +1,54 @@
+/* ===== PROJECTS ===== */
+.project-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.project-thumbnail {
+  aspect-ratio: 1;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+/* ===== CAROUSEL STYLES ===== */
+.carousel-container {
+  overflow: hidden;
+  position: relative;
+  margin-top: 16px;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 0.8rem;
+  width: fit-content;
+}
+
+.project-thumbnail {
+  min-width: 180px;
+  height: 100px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.view-works-container {
+  display: flex;
+  justify-content: center;
+  transform: translateY(-20%);
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}

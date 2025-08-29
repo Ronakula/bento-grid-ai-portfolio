@@ -1,0 +1,104 @@
+/* ===== TECH GRID ===== */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  width: 100%;
+}
+
+.tech-grid.single-column {
+  grid-template-columns: 1fr;
+}
+
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 2px 8px;
+  background: var(--surface-2);
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-2);
+}
+
+@media (width < 768px) {
+  .tech-item {
+    padding: 8px;
+  }
+}
+
+.tech-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  background: var(--surface-3);
+  border-radius: 8px;
+}
+
+/* ===== MARQUEE STYLES ===== */
+.marquee-container {
+  overflow: hidden;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.marquee-content {
+  display: inline-flex;
+  gap: 12px;
+  animation: marquee 40s linear infinite;
+}
+
+.marquee-content.reverse {
+  animation: marquee-reverse 40s linear infinite;
+}
+
+.tech-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 16px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text-1);
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

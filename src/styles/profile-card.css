@@ -1,0 +1,161 @@
+/* ===== PROFILE CARD ===== */
+.profile-card {
+  text-align: center;
+}
+
+.profile-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: start;
+  margin-bottom: 16px;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.profile-info h1 {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+@media (width < 768px) {
+  .profile-info {
+    margin-left: 12px;
+  }
+
+  .profile-info h1 {
+    margin-top: 6px;
+  }
+}
+
+.profile-avatar {
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+.avatar-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 3px solid var(--surface-3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.profile-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (width < 768px) {
+  .profile-status button {
+    display: none;
+  }
+}
+
+.status-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  background: var(--surface-2);
+  padding: 6px;
+  border-radius: 12px;
+  color: var(--text-2);
+}
+
+.status-dot {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 8px;
+  height: 8px;
+  background: var(--success);
+  border-radius: 50%;
+}
+
+.status-dot::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 8px;
+  height: 8px;
+  background: var(--success);
+  border-radius: 50%;
+  animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.profile-tagline {
+  color: var(--text-2);
+}
+
+.typing-text {
+  color: var(--primary-base);
+  font-weight: 500;
+}
+
+.cursor {
+  animation: blink 1s infinite;
+  color: var(--primary);
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.profile-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 24px;
+  background: var(--surface-2);
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  background: var(--surface-2);
+  border: 1px solid var(--surface-3);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-2);
+}
+
+.profile-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.whatsapp-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.profile-actions .btn {
+  font-size: 1rem;
+  color: var(--text-2);
+}
