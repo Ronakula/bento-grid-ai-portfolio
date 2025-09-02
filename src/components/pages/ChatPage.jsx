@@ -10,7 +10,7 @@ import { techStack } from "../../data/allSkills.js"
 import MarqueeSection from "../shared/MarqueeSection.jsx"
 import { whyChooseMe } from "../../data/whyChooseMe.js"
 import MobileNav from "../shared/MobileNav.jsx"
-import ChatSection from "../demo/chat"
+import ChatSection from "../chat"
 
 export default function ChatPage() {
   // Custom stats for chat page

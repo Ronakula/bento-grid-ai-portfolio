@@ -9,6 +9,9 @@
  */
 
 import type * as demo_chat from "../demo/chat.js";
+import type * as ronbot_lib from "../ronbot/lib.js";
+import type * as ronbot_mutation from "../ronbot/mutation.js";
+import type * as users from "../users.js";
 
 import type {
   ApiFromModules,
@@ -26,6 +29,9 @@ import type {
  */
 declare const fullApi: ApiFromModules<{
   "demo/chat": typeof demo_chat;
+  "ronbot/lib": typeof ronbot_lib;
+  "ronbot/mutation": typeof ronbot_mutation;
+  users: typeof users;
 }>;
 declare const fullApiWithMounts: typeof fullApi;
 

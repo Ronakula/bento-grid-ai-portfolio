@@ -11,8 +11,9 @@
   },
   "dependencies": {
     "@ai-sdk/google": "2.0.6",
-"@convex-dev/agent": "0.2.0",
+    "@convex-dev/agent": "0.2.0",
     "convex": "^1.26.2",
+    "convex-helpers": "^0.1.104",
     "lucide-react": "^0.542.0",
     "motion": "^12.23.12",
     "react": "^19.1.1",
